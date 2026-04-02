@@ -1,15 +1,10 @@
 import localFont from "next/font/local";
+import { Baloo_2 } from "next/font/google";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const baloo = Baloo_2({
+  subsets: ["latin"],
+  weight: ["400"]
 });
 
 export const metadata = {
@@ -20,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={baloo.className}>
         {children}
       </body>
     </html>
